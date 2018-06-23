@@ -13,7 +13,7 @@ test = data = np.loadtxt(open("/Users/Sarath/Projects/CusatMLWorkShop/data/day1/
 x_test = test[:, 0].reshape(-1, 1)
 y_test = test[:, 1].reshape(-1, 1)
 
-print data
+print(data)
 
 #import model
 from sklearn import linear_model as lm
