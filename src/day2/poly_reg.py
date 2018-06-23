@@ -31,8 +31,13 @@ pipeline = Pipeline([("polynomial_features",polynomial_features),\
                      ("linear_regression",linear_regression)])
 pipeline.fit(X_train, Y_train)
 
-Y_pred = pipeline.predict(X_test)
+Y_pred = pipeline.predict(X.reshape(-1,1))
 
 plt.scatter(X, y, color='red')
-plt.plot(X_test, y_pred, color="blue", linewidth=1)
+plt.plot(X, y_actual, color="blue", linewidth=3)
+plt.plot(X, Y_pred, color="green", linewidth=3)
 plt.show()
+
+#model = lm.Ridge(alpha=0.001, fit intercept=True)
+# alpha is regularization parameter - greater the alpha - model underfits
+#                                     lesser the alpha - model overfits
